@@ -1,17 +1,17 @@
 package com.ironhack.hellojpa.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "coffee")
 public class Coffee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
+    @Column(name = "name", nullable = false, unique = true)
+    private String coffeeName;
 
 
     public Long getId() {
@@ -22,17 +22,16 @@ public class Coffee {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCoffeeName() {
+        return coffeeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCoffeeName(String name) {
+        this.coffeeName = name;
     }
 
-    public Coffee(Long id, String name) {
-        this.id = id;
-        this.name = name;
+    public Coffee(String name) {
+        this.coffeeName = name;
     }
 
     public Coffee() {

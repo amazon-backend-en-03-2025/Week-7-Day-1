@@ -28,4 +28,9 @@ public class CoffeeController {
     public Coffee getCoffeeById(@PathVariable Long id) {
         return coffeeService.getCoffeeById(id);
     }
+
+    @GetMapping("/name/{name}")
+    public Coffee getCoffeeByName(@PathVariable String name) {
+        return coffeeService.findCoffeeByName(name);
+    }
 }

@@ -30,8 +30,7 @@ public class Kombucha {
         this.name = name;
     }
 
-    public Kombucha(Integer id, String name) {
-        this.id = id;
+    public Kombucha(String name) {
         this.name = name;
     }
 
